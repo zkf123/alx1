@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<style>
+		*{margin: 0;
+		padding: 0;}
+		ul{
+			width: 800px;
+			margin: 30px auto;
+		}
+		ul li{
+		list-style:none;
+		float:left;
+		width: 80px;
+		height: 50px;
+		background: red;
+		text-align: center;
+		line-height: 50px;
+		color: black;
+		position: relative;
+		margin-right: 35px;
+	}
+	/*元素前加内容*/
+	ul li::before{
+		position: absolute;
+		content:"";
+		display: block;
+		width: 20px;
+		height: 50px;
+		background: red;
+		left: -20px;
+		top: 0px;
+	}
+		/*元素后加内容*/
+	ul li::after{position: absolute;
+	    content: "";
+		display: block;
+		width: 20px;
+		height: 50px;
+		background: red;
+		right: -20px;
+		top: 0px;}
+		ul li:hover{
+			margin-top: -10px;
+			transition: all .2s;
+			box-shadow: 0px 2px 5px black;
+		}
+			li:hover:before{
+				transform: rotate(-30deg) skew(-30deg) translate(2px,9px);transition: all .2s;height: 86%;
+			}
+		    li:hover:after{
+				transform: rotate(30deg) skew(30deg) translate(-2px,9px);transition: all .2s;height: 86%;
+			}
+	</style>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+	</body>
+</html>
